@@ -858,6 +858,8 @@ footer {
 
   & .fa-solid{
     width: 5rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
