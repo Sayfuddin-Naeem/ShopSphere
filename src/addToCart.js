@@ -12,10 +12,21 @@ export const addToCart = (ev, id, stock) => {
     // console.log(quantity, price);
     price = parseFloat(price.slice(1));
     quantity = parseInt(quantity);
-    price = price * quantity;
 
-    arrLocalStorageProduct.push({id, quantity, price});
+    const existProduct = arrLocalStorageProduct.find(p => p.id === id);
+
+    if(!existProduct){
+        price = Math.round(price * quantity * 100) / 100;
+        arrLocalStorageProduct.push({id, quantity, price});
+    }
+    else if(quantity > 1){
+        quantity += existProduct.quantity;
+        price = Math.round(price * quantity * 100) / 100;
+        
+        existProduct.quantity = quantity;
+        existProduct.price = price;
+    }
+
     localStorage.setItem('cartProductLS', JSON.stringify(arrLocalStorageProduct));
-    
     showCardValue();
 };
