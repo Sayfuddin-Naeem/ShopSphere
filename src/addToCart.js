@@ -22,6 +22,10 @@ export const addToCart = (ev, id, stock) => {
     }
     else if(quantity > 1){
         quantity += existProduct.quantity;
+        
+        if(quantity > stock){
+            quantity = stock;
+        }
         price = roundTo(price * quantity, 2);
         
         existProduct.quantity = quantity;

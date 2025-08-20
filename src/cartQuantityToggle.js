@@ -1,3 +1,4 @@
+import { calculateCartTotalPrice } from './calculateCartTotalPrice';
 import { getCartProductsFromLS } from './getCartProductsFromLS';
 import { getProductByIdFromAPI } from './getProductByIdFromApi';
 import { roundTo } from './roundTo';
@@ -35,5 +36,6 @@ export const cartQuantityToggle = (ev, id, stock) => {
     curCartProductLS.quantity = quantity;
 
     localStorage.setItem('cartProductLS', JSON.stringify(cartProductsLS));
-
+    
+    calculateCartTotalPrice();
 };

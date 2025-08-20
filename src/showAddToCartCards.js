@@ -4,6 +4,7 @@ import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { removeFromCartList } from "./removeFromCartList";
 import { getCartProductByIdFromLS } from "./getCartProductByIdFromLS";
 import { cartQuantityToggle } from "./cartQuantityToggle";
+import { calculateCartTotalPrice } from "./calculateCartTotalPrice";
 
 showCardValue();
 
@@ -53,3 +54,4 @@ const showCartProduct = () => {
 
 
 showCartProduct();
+calculateCartTotalPrice();
