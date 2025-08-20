@@ -1,4 +1,5 @@
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
+import { roundTo } from "./roundTo";
 import { showCardValue } from "./showCardValue";
 
 export const addToCart = (ev, id, stock) => {
@@ -21,7 +22,7 @@ export const addToCart = (ev, id, stock) => {
     }
     else if(quantity > 1){
         quantity += existProduct.quantity;
-        price = Math.round(price * quantity * 100) / 100;
+        price = roundTo(price * quantity, 2);
         
         existProduct.quantity = quantity;
         existProduct.price = price;

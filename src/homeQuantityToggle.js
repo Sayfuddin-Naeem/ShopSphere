@@ -3,7 +3,7 @@ export const homeQuantityToggle = (ev, id, stock) => {
 
     const productQuantity = currentCardElem.querySelector('.productQuantity');
 
-    let quantity = parseInt(productQuantity.getAttribute('data-quantity')) || 1;
+    let quantity = parseInt(productQuantity.getAttribute('data-quantity'));
 
     if(ev.target.className === 'cartIncrement'){
         if(quantity < stock){
@@ -11,7 +11,7 @@ export const homeQuantityToggle = (ev, id, stock) => {
         }
     }
 
-    if(ev.target.className === 'cartDecrement'){
+    else if(ev.target.className === 'cartDecrement'){
         if(quantity > 1){
             quantity--;
         }

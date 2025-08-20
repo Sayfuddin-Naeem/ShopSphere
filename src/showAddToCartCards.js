@@ -1,9 +1,9 @@
 import { showCardValue } from "./showCardValue";
 import products from "./api/products.json";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
-import { homeQuantityToggle } from "./homeQuantityToggle";
 import { removeFromCartList } from "./removeFromCartList";
 import { getCartProductByIdFromLS } from "./getCartProductByIdFromLS";
+import { cartQuantityToggle } from "./cartQuantityToggle";
 
 showCardValue();
 
@@ -22,7 +22,7 @@ const showCartProduct = () => {
         const {id, name, category, price, stock, image} = curProduct;
         const productClone = document.importNode(templateContainer.content, true);
 
-        const curCartProduct = getCartProductByIdFromLS(id);
+        const curCartProductLS = getCartProductByIdFromLS(id);
         
         productClone.querySelector('#cardValue').setAttribute('id', `card${id}`);
 
@@ -30,13 +30,14 @@ const showCartProduct = () => {
         productClone.querySelector('.productImage').src = image;
         productClone.querySelector('.productImage').alt = name;
         productClone.querySelector('.productName').textContent = name;
-        productClone.querySelector('.productPrice').textContent = `\u09F3${curCartProduct.price}`;
-        productClone.querySelector('.productQuantity').textContent = curCartProduct.quantity;
+        productClone.querySelector('.productPrice').textContent = `\u09F3${curCartProductLS.price}`;
+        productClone.querySelector('.productQuantity').textContent = curCartProductLS.quantity;
+        productClone.querySelector('.productQuantity').setAttribute('data-quantity', curCartProductLS.quantity);
 
         productClone
             .querySelector('.stockElement')
             .addEventListener('click', (ev) => {
-                homeQuantityToggle(ev, id, stock);
+                cartQuantityToggle(ev, id, stock);
             });
         
         productClone
