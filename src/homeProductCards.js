@@ -5,8 +5,8 @@ const productContainer = document.querySelector('#productContainer');
 const productTemplate = document.querySelector('#productTemplate');
 
 export const showProductContainer = (products) => {
-    if(!products){
-        return false;
+    if(Array.isArray(products) === false){
+        throw new TypeError('This is not an array. Give a valid array !!');
     }
 
     products.forEach(curProduct => {

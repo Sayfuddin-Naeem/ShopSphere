@@ -1,3 +1,4 @@
+import { getCartProductByIdFromLS } from "./getCartProductByIdFromLS";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { roundTo } from "./roundTo";
 import { setCartProductToLS } from "./setCartProductToLS";
@@ -15,10 +16,10 @@ export const addToCart = (ev, id, stock) => {
     price = parseFloat(price.slice(1));
     quantity = parseInt(quantity);
 
-    const existProduct = arrLocalStorageProduct.find(p => p.id === id);
+    const existProduct = getCartProductByIdFromLS(id);
 
     if(!existProduct){
-        price = Math.round(price * quantity * 100) / 100;
+        price = roundTo(price * quantity, 2);
         arrLocalStorageProduct.push({id, quantity, price});
     }
     else if(quantity > 1){
