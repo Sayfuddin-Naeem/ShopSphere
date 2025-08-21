@@ -3,6 +3,7 @@ import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { roundTo } from "./roundTo";
 import { setCartProductToLS } from "./setCartProductToLS";
 import { showCardValue } from "./showCardValue";
+import { showToast } from "./showToast";
 
 export const addToCart = (ev, id, stock) => {
     let arrLocalStorageProduct = getCartProductsFromLS();
@@ -16,6 +17,7 @@ export const addToCart = (ev, id, stock) => {
     price = parseFloat(price.slice(1));
     quantity = parseInt(quantity);
 
+    // Get cart product based on id from local storage
     const existProduct = getCartProductByIdFromLS(id);
 
     if(!existProduct){
@@ -34,6 +36,10 @@ export const addToCart = (ev, id, stock) => {
         existProduct.price = price;
     }
 
+    // Set cart products to local storage
     setCartProductToLS(arrLocalStorageProduct);
+    // Show all cart products on addToCart page
     showCardValue();
+    // Show toast when product delete from cart
+    showToast('add', id);
 };

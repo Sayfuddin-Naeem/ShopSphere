@@ -2,6 +2,7 @@ import { calculateCartTotalPrice } from "./calculateCartTotalPrice";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { setCartProductToLS } from "./setCartProductToLS";
 import { showCardValue } from "./showCardValue";
+import { showToast } from "./showToast";
 
 export const removeFromCartList = (ev, id) => {
     const prodCartContainer = document.querySelector('#productCartContainer');
@@ -25,6 +26,7 @@ export const removeFromCartList = (ev, id) => {
 
             // Show toast when product delete from cart
             showToast('delete', id);
+            
             return true;
         }
     }
