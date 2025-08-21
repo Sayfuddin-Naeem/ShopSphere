@@ -149,6 +149,10 @@ a {
   margin: 2.4rem 0 1.2rem 0;
 }
 
+.section-common--subheading{
+  margin-top: 2.4rem;
+}
+
 /* states  */
 
 .btn:hover {
@@ -639,6 +643,11 @@ textarea {
   padding: 1.4rem 2.4rem;
   font-size: 1.6rem;
   letter-spacing: 0.1rem;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .btn-submit {
@@ -735,6 +744,13 @@ footer {
 /***** End Footer Section *****/
 
 /**** Our Home product section  Starts ***/
+
+.section-products{
+  & .container:first-child{
+    padding-bottom: 1rem;
+  }
+}
+
 #productContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

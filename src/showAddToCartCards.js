@@ -1,4 +1,4 @@
-import { showCardValue } from "./showCardValue";
+import { showCartValue } from "./showCartValue";
 import products from "./api/products.json";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { removeFromCartList } from "./removeFromCartList";
@@ -7,7 +7,7 @@ import { cartQuantityToggle } from "./cartQuantityToggle";
 import { calculateCartTotalPrice } from "./calculateCartTotalPrice";
 
 // Show number of total product in cart on navbar cart icon
-showCardValue();
+showCartValue();
 
 // Get cart products from local storage
 let cartProducts = getCartProductsFromLS();

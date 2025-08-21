@@ -1,10 +1,11 @@
 import './style.css';
 import products from './api/products.json';
 import { showProductContainer } from './homeProductCards';
-import { showCardValue } from './showCardValue';
+import { showCartValue } from './showCartValue';
 
 
 
 showProductContainer(products);
-showCardValue();
+// Show number of total product in cart on navbar cart icon
+showCartValue();
 

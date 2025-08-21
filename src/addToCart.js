@@ -2,7 +2,7 @@ import { getCartProductByIdFromLS } from "./getCartProductByIdFromLS";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { roundTo } from "./roundTo";
 import { setCartProductToLS } from "./setCartProductToLS";
-import { showCardValue } from "./showCardValue";
+import { showCartValue } from "./showCartValue";
 import { showToast } from "./showToast";
 
 export const addToCart = (ev, id, stock) => {
@@ -38,8 +38,8 @@ export const addToCart = (ev, id, stock) => {
 
     // Set cart products to local storage
     setCartProductToLS(arrLocalStorageProduct);
-    // Show all cart products on addToCart page
-    showCardValue();
+    // Show number of total product in cart on navbar cart icon
+    showCartValue();
     // Show toast when product delete from cart
     showToast('add', id);
 };

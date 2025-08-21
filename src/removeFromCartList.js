@@ -1,7 +1,7 @@
 import { calculateCartTotalPrice } from "./calculateCartTotalPrice";
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { setCartProductToLS } from "./setCartProductToLS";
-import { showCardValue } from "./showCardValue";
+import { showCartValue } from "./showCartValue";
 import { showToast } from "./showToast";
 
 export const removeFromCartList = (ev, id) => {
@@ -19,8 +19,8 @@ export const removeFromCartList = (ev, id) => {
             // remove product card from addToCart page
             prodCartContainer.removeChild(removeCard);
 
-            // Show all cart products on addToCart page
-            showCardValue();
+            // Show number of total product in cart on navbar cart icon
+            showCartValue();
             // Calculate total price of cart by local storage cart data
             calculateCartTotalPrice();
 

@@ -1,6 +1,6 @@
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 
-export const showCardValue = () => {
+export const showCartValue = () => {
     const arrLocalStorageProduct = getCartProductsFromLS();
     document
         .querySelector('#cartValue')
