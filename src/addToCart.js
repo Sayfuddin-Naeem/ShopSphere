@@ -1,5 +1,6 @@
 import { getCartProductsFromLS } from "./getCartProductsFromLS";
 import { roundTo } from "./roundTo";
+import { setCartProductToLS } from "./setCartProductToLS";
 import { showCardValue } from "./showCardValue";
 
 export const addToCart = (ev, id, stock) => {
@@ -32,6 +33,6 @@ export const addToCart = (ev, id, stock) => {
         existProduct.price = price;
     }
 
-    localStorage.setItem('cartProductLS', JSON.stringify(arrLocalStorageProduct));
+    setCartProductToLS(arrLocalStorageProduct);
     showCardValue();
 };

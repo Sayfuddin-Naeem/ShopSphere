@@ -2,6 +2,7 @@ import { calculateCartTotalPrice } from './calculateCartTotalPrice';
 import { getCartProductsFromLS } from './getCartProductsFromLS';
 import { getProductByIdFromAPI } from './getProductByIdFromApi';
 import { roundTo } from './roundTo';
+import { setCartProductToLS } from './setCartProductToLS';
 
 export const cartQuantityToggle = (ev, id, stock) => {
     const curCardElement = document.querySelector(`#card${id}`);
@@ -35,7 +36,7 @@ export const cartQuantityToggle = (ev, id, stock) => {
     curCartProductLS.price = totalPrice;
     curCartProductLS.quantity = quantity;
 
-    localStorage.setItem('cartProductLS', JSON.stringify(cartProductsLS));
+    setCartProductToLS(cartProductsLS);
     
     calculateCartTotalPrice();
 };
