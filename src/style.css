@@ -261,7 +261,7 @@ textarea:focus-visible {
     display: inline-block;
     position: relative;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       bottom: -0.3rem;
@@ -271,12 +271,21 @@ textarea:focus-visible {
       transition: all 0.3s linear;
     }
   }
-  & li a:hover {
+  & li a:hover, .active {
     color: var(--main-color);
   }
 
-  & li a:hover:after {
+  & li a:hover::after{
     width: 100%;
+  }
+
+  & .active::after{
+      content: "";
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 100%;
+      border-bottom: 0.1rem solid var(--main-color);
   }
 }
 

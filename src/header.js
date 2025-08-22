@@ -1,3 +1,5 @@
+import { activeClassToggle } from "./activeClassToggle";
+
 export const showHeader = () => {
   const headerHTML = `
     <section class="top_txt">
@@ -53,4 +55,5 @@ export const showHeader = () => {
 
   const headerElem = document.querySelector('.section-navbar');
   headerElem.insertAdjacentHTML('afterbegin', headerHTML);
+  activeClassToggle();
 };
