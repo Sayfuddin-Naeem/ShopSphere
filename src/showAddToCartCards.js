@@ -5,9 +5,16 @@ import { removeFromCartList } from "./removeFromCartList";
 import { getCartProductByIdFromLS } from "./getCartProductByIdFromLS";
 import { cartQuantityToggle } from "./cartQuantityToggle";
 import { calculateCartTotalPrice } from "./calculateCartTotalPrice";
+import { showHeader } from "./header";
+import { showFooter } from "./footer";
 
+
+// Show header section on html page
+showHeader();
 // Show number of total product in cart on navbar cart icon
 showCartValue();
+// Show footer section on html page
+showFooter();
 
 // Get cart products from local storage
 let cartProducts = getCartProductsFromLS();

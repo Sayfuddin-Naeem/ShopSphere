@@ -1,4 +1,5 @@
-const headerHTML = `
+export const showHeader = () => {
+  const headerHTML = `
     <section class="top_txt">
       <div class="head container">
         <div class="head_txt">
@@ -14,7 +15,7 @@ const headerHTML = `
       <div class="navbar-brand">
         <a href="index.html">
           <img
-            src="./public/images/logo2.png"
+            src="./images/logo2.png"
             alt="ShopSphere eCommerce logo"
             width="80%"
             height="auto"
@@ -50,5 +51,6 @@ const headerHTML = `
     </div>
 `;
 
-const headerElem = document.querySelector('.section-navbar');
-headerElem.insertAdjacentHTML('afterbegin', headerHTML);
+  const headerElem = document.querySelector('.section-navbar');
+  headerElem.insertAdjacentHTML('afterbegin', headerHTML);
+};

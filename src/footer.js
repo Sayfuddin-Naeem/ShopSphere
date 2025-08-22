@@ -1,7 +1,8 @@
-const footerHTML = `
+export const showFooter = () => {
+  const footerHTML = `
     <div class="footer-container container">
         <div class="content_1">
-          <img src="./public/images/logo3.PNG" alt="logo" />
+          <img src="./images/logo3.png" alt="ShopSphere logo" />
           <p>
             Welcome to ShopSphere eComStore, your ultimate destination for
             cutting-edge gadgets!
@@ -38,5 +39,7 @@ const footerHTML = `
         </div>
     </div>`;
 
-const footerElem = document.querySelector(".section-footer");
-footerElem.insertAdjacentHTML("afterbegin", footerHTML);
+  const footerElem = document.querySelector(".section-footer");
+  footerElem.insertAdjacentHTML("afterbegin", footerHTML);
+
+};
